@@ -32,9 +32,20 @@ public class ReservationController {
     }
 
     @PutMapping("/{id}")
-    public Reservation updateReservation(@PathVariable String id, @Valid @RequestBody Reservation reservation) {
-        reservation.setId(id);
-        return reservationRepository.save(reservation);
+    public Reservation updateReservation(@PathVariable String id, @Valid @RequestBody Reservation updatedReservation) {
+        // Buscar la reserva existente por su ID
+        Reservation existingReservation = reservationRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Reservation not found with id " + id));
+
+        // Actualizar los campos de la reserva existente con los nuevos valores
+        existingReservation.setCustomerName(updatedReservation.getCustomerName());
+        existingReservation.setCustomerEmail(updatedReservation.getCustomerEmail());
+        existingReservation.setStartDate(updatedReservation.getStartDate());
+        existingReservation.setEndDate(updatedReservation.getEndDate());
+        existingReservation.setRoomType(updatedReservation.getRoomType());
+
+        // Guardar la reserva actualizada
+        return reservationRepository.save(existingReservation);
     }
 
     @DeleteMapping("/{id}")

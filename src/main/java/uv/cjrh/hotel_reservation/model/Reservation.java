@@ -1,6 +1,7 @@
 package uv.cjrh.hotel_reservation.model;
 
 import lombok.Data;
+import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -35,4 +36,3 @@ public class Reservation {
     public void setId(String id2) {
     }
 }
-
