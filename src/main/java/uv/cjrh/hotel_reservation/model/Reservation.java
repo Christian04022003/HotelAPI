@@ -1,7 +1,6 @@
 package uv.cjrh.hotel_reservation.model;
 
 import lombok.Data;
-import lombok.Getter;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
@@ -33,6 +32,7 @@ public class Reservation {
     @NotBlank(message = "El tipo de habitación es obligatorio")
     private String roomType;
 
-    public void setId(String id2) {
+    public void setId(String id) {
+        this.id = id;
     }
 }

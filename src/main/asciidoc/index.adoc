@@ -1,0 +1,16 @@
+= API Documentation
+:doctype: book
+:toc: left
+
+== API Endpoints
+
+[cols="1,3", options="header"]
+|===
+| Endpoint | Description
+
+| `GET /api/reservations`
+| Retrieve all reservations.
+
+| `GET /api/reservations/{id}`
+| Retrieve a reservation by ID.
+|===
