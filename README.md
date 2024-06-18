@@ -38,7 +38,7 @@ La API de Hotel Reservation es un sistema de gestión de reservas de hotel que p
 1. Clona el repositorio:
 
    ```bash
-   git clone https://github.com/tu-usuario/hotel_reservation.git
+   git clone https://github.com/Christian04022003/HotelAPI.git
    cd hotel_reservation
    ```
 
