@@ -1,13 +1,14 @@
 package uv.cjrh.hotel_reservation.controller;
 
-
 import uv.cjrh.hotel_reservation.model.Reservation;
 import uv.cjrh.hotel_reservation.repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import jakarta.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/reservations")
@@ -27,8 +28,10 @@ public class ReservationController {
     }
 
     @GetMapping("/{id}")
-    public Reservation getReservationById(@PathVariable String id) {
-        return reservationRepository.findById(id).orElse(null);
+    public ResponseEntity<Reservation> getReservationById(@PathVariable String id) {
+        Optional<Reservation> reservation = reservationRepository.findById(id);
+        return reservation.map(ResponseEntity::ok)
+                .orElse(ResponseEntity.notFound().build());
     }
 
     @PutMapping("/{id}")
@@ -53,4 +56,3 @@ public class ReservationController {
         reservationRepository.deleteById(id);
     }
 }
-

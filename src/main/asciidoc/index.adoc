@@ -4,13 +4,43 @@
 
 == API Endpoints
 
-[cols="1,3", options="header"]
-|===
-| Endpoint | Description
+=== Retrieve all reservations
 
-| `GET /api/reservations`
-| Retrieve all reservations.
+==== Request
 
-| `GET /api/reservations/{id}`
-| Retrieve a reservation by ID.
-|===
+[source, http]
+----
+GET /api/reservations
+----
+
+==== Response 200 OK
+
+[source, json]
+----
+[]
+----
+
+=== Retrieve a reservation by ID
+
+==== Request
+
+[source, http]
+----
+GET /api/reservations/{id}
+----
+
+==== Response 200 OK
+
+[source, json]
+----
+{
+  "id": "1",
+  "customerName": "John Doe",
+  "customerEmail": "john.doe@example.com",
+  "startDate": "2024-06-18T12:00:00Z",
+  "endDate": "2024-06-19T12:00:00Z",
+  "roomType": "Single"
+}
+----
+
+Last updated 2024-06-18 10:00:00 -0500

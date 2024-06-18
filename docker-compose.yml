@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  app:
+    image: christian030204/hotel-reservation-app:latest
+    ports:
+      - "8081:9000"
+    depends_on:
+      - mongo
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: jair250819
+      MONGO_INITDB_ROOT_PASSWORD: hotel123
