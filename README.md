@@ -1,5 +1,3 @@
-Claro, aquí tienes un ejemplo de un README para tu API de hotel_reservation en GitHub:
-
 ---
 
 # Hotel Reservation API
