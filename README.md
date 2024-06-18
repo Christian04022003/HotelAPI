@@ -29,7 +29,7 @@ La API de Hotel Reservation es un sistema de gestión de reservas de hotel que p
 
 ### Prerrequisitos
 
-- Java 11
+- Java 17
 - Maven
 - MongoDB
 
